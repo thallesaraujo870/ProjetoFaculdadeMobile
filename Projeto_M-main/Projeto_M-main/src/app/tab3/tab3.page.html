@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Relatório</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resumo de Senhas Geradas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Senhas Prioritárias (SP): {{ senhasService.senhasPrior }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Senhas Exame (SE): {{ senhasService.senhasExame }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Senhas Gerais (SG): {{ senhasService.senhasGeral }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total de Senhas: {{ senhasService.senhasTotal }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

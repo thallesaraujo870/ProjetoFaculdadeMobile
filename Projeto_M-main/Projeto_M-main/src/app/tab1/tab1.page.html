@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gerar Senha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="gerarSenha('SP')">
+    Gerar Senha Prioritária (SP)
+  </ion-button>
+
+  <ion-button expand="block" (click)="gerarSenha('SE')">
+    Gerar Senha Exame (SE)
+  </ion-button>
+
+  <ion-button expand="block" (click)="gerarSenha('SG')">
+    Gerar Senha Geral (SG)
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      Últimas Senhas Chamadas
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let chamada of senhasService.ultimasChamadas">
+          <ion-label>
+            Senha: {{ chamada.senha }} - Guichê: {{ chamada.guiche }}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

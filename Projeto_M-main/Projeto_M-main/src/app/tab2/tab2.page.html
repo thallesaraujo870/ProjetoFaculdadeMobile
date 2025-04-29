@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Atendimento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" *ngFor="let guiche of guiches">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ guiche.nome }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Status: <strong>{{ guiche.status }}</strong></p>
+            <p *ngIf="guiche.senha">Senha: {{ guiche.senha }}</p>
+            <p *ngIf="guiche.status === 'Ocupado'">
+              Tempo restante: {{ formatarTempo(guiche.tempoRestante) }}
+            </p>
+            <ion-button expand="block" (click)="chamarProximaSenha(guiche)" [disabled]="guiche.status === 'Ocupado'">
+              Chamar Próxima Senha
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
